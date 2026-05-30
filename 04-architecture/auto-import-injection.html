@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Import Injection</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:white;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+.container{width:90%;max-width:1100px;margin:auto;padding:50px 20px}
+h1{text-align:center;font-size:36px;color:#38bdf8;margin-bottom:16px}
+.subtitle{text-align:center;color:#cbd5e1;margin-bottom:40px;font-size:17px}
+.section{background:#1e293b;padding:28px;border-radius:14px;margin-bottom:28px;border-left:6px solid #38bdf8}
+.section h2{color:#facc15;margin-bottom:14px}
+.section p{color:#cbd5e1;line-height:1.7;margin-bottom:12px}
+pre{background:#020617;color:#4ade80;padding:14px;border-radius:10px;overflow-x:auto;margin:10px 0 16px}
+a.back{display:inline-block;margin-top:20px;padding:10px 22px;background:#38bdf8;color:black;text-decoration:none;border-radius:8px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Auto Import Injection</h1>
+<p class="subtitle">How extensions automatically update app.js and end-points.js</p>
+<div class="section"><h2>What It Does</h2><p>When you run StartEndPoint, AddSubRoute, or AddTableName, the extension does not just create files. It reads your existing app.js or routes.js and automatically injects the correct import and app.use() lines.</p><pre>// Before running StartEndPoint:
+// app.js has no Api import
+
+// After:
+import { router as apiRouter } from './Api/routes.js';
+app.use('/Api', apiRouter);</pre></div>
+<div class="section"><h2>How It Works Internally</h2><p>The kschema-api-gen-actions module uses updateImports.js and updateUse/index.js to locate the correct insertion position, check for duplicates using checkDuplicate.js, then write the new lines safely.</p><pre>cli.js
+ ↓ parseInput.js
+ ↓ resolveCommand.js
+ ↓ updateImports.js + checkDuplicate.js
+ ↓ updateUse/index.js
+ ↓ Source file updated</pre></div>
+<div class="section"><h2>Why process.cwd() Matters</h2><p>All generators use process.cwd() to locate your project root. Running the command from the wrong folder generates incorrect paths and broken imports. Always run from your project root.</p><pre># Wrong (run from subfolder)
+cd Api && npx @keshavsoft/kschema-api-gen-actions ShowAll
+
+# Correct
+npx @keshavsoft/kschema-api-gen-actions ShowAll</pre></div>
+
+<a href="../README.md" class="back">← Back to Overview</a>
+</div>
+</body>
+</html>

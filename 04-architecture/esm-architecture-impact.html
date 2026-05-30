@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESM Architecture Impact</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:white;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+.container{width:90%;max-width:1100px;margin:auto;padding:50px 20px}
+h1{text-align:center;font-size:36px;color:#38bdf8;margin-bottom:16px}
+.subtitle{text-align:center;color:#cbd5e1;margin-bottom:40px;font-size:17px}
+.section{background:#1e293b;padding:28px;border-radius:14px;margin-bottom:28px;border-left:6px solid #38bdf8}
+.section h2{color:#facc15;margin-bottom:14px}
+.section p{color:#cbd5e1;line-height:1.7;margin-bottom:12px}
+pre{background:#020617;color:#4ade80;padding:14px;border-radius:10px;overflow-x:auto;margin:10px 0 16px}
+a.back{display:inline-block;margin-top:20px;padding:10px 22px;background:#38bdf8;color:black;text-decoration:none;border-radius:8px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>ESM Architecture Impact</h1>
+<p class="subtitle">Why ES Modules affect every import, export, and route connection</p>
+<div class="section"><h2>What ESM Means Here</h2><p>The entire KeshavSoft ecosystem uses ES Modules (type: module in package.json). This means every import must use the full file path including .js extension, and every module must explicitly export what it exposes.</p><pre>// package.json
+{ "type": "module" }
+
+// Every import needs .js
+import { router } from './Api/routes.js'; // correct
+import { router } from './Api/routes';    // fails</pre></div>
+<div class="section"><h2>Named vs Default Exports</h2><p>The most common runtime error: app.js expects a default export but routes.js uses a named export. ESM does not silently coerce these.</p><pre>// routes.js — named export
+export { router };
+
+// app.js — must use named import
+import { router } from './Api/routes.js';
+
+// Wrong — default import of named export
+import router from './Api/routes.js'; // Error</pre></div>
+<div class="section"><h2>How This Affects Generators</h2><p>Auto-generated files follow the named export convention throughout. If you manually edit a file and switch to default exports, it will break every file that imports from it.</p><pre>// Generated end-points.js
+export { router };
+
+// Generated V1/routes.js
+import { router as journalsRouter } from './journals/end-points.js';</pre></div>
+
+<a href="../README.md" class="back">← Back to Overview</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!-- ========================= -->
+<!-- step4.html -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Step 4</title>
+
+    <style>
+
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Arial;
+            padding:40px;
+        }
+
+        h1{
+            color:#38bdf8;
+            margin-bottom:20px;
+        }
+
+        p{
+            margin-bottom:20px;
+            line-height:1.7;
+        }
+
+        img{
+            width:100%;
+            border-radius:12px;
+            margin-top:20px;
+            margin-bottom:30px;
+        }
+
+        pre{
+            background:#020617;
+            color:#4ade80;
+            padding:15px;
+            border-radius:10px;
+            overflow-x:auto;
+            margin-top:10px;
+            margin-bottom:20px;
+        }
+
+        .back{
+            display:inline-block;
+            margin-top:30px;
+            padding:12px 24px;
+            background:#38bdf8;
+            color:black;
+            text-decoration:none;
+            border-radius:10px;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>STEP 4 — Generate API Actions</h1>
+
+    <p>
+        Open:
+    </p>
+
+<pre>
+Api/V1/journals/end-points.js
+</pre>
+
+    <p>
+        Click:
+    </p>
+
+<pre>
+get
+</pre>
+
+    <p>
+        Select:
+    </p>
+
+<pre>
+ShowAll : get all data from table
+</pre>
+
+    <img src="../07-screenshots/api-testing/showAll.png">
+
+    <p>
+        This generates:
+    </p>
+
+<pre>
+ShowAll/
+</pre>
+
+    <p>
+        With files:
+    </p>
+
+<pre>
+controller.js
+errors.js
+service.js
+rest.http
+</pre>
+
+    <hr>
+
+    <p>
+        Now click:
+    </p>
+
+<pre>
+insert
+</pre>
+
+    <p>
+        Select:
+    </p>
+
+<pre>
+Insert : AsIs
+</pre>
+
+    <img src="images/step4_2.png">
+
+    <p>
+        This generates:
+    </p>
+
+<pre>
+Insert/
+</pre>
+
+    <p>
+        With files:
+    </p>
+
+<pre>
+controller.js
+errors.js
+middleware.js
+service.js
+rest.http
+</pre>
+
+    <hr>
+
+    <p>
+        Now click:
+    </p>
+
+<pre>
+delete
+</pre>
+
+    <p>
+        Select required delete type.
+    </p>
+
+    <img src="images/step4_3.png">
+
+    <p>
+        This updates:
+    </p>
+
+<pre>
+end-points.js
+</pre>
+
+    <p>
+        Automatically adds imports and routes.
+    </p>
+
+    <a href="index.html" class="back">
+        Back to Home
+    </a>
+
+</body>
+
+</html>
