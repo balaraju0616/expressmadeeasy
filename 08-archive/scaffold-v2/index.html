@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scaffold Express Boilerplate - Documentation Story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Scaffold Express Boilerplate</h1>
+  <p>EndPointGen VS Code Extension Documentation Story</p>
+</header>
+
+<div class="container">
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>
+      Scaffold Express Boilerplate is a command provided by the EndPointGen VS Code extension.
+      The purpose of this command is to automatically generate a professional Express.js backend project structure
+      from an empty folder using a single right-click action inside Visual Studio Code.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Objective</h2>
+    <p>
+      The main goal of this command is to reduce repetitive backend setup work and provide developers with a ready-to-use
+      Express.js architecture instantly.
+    </p>
+
+    <ul>
+      <li>Automates Express backend scaffolding</li>
+      <li>Creates modular backend architecture</li>
+      <li>Reduces manual file creation</li>
+      <li>Provides environment configuration support</li>
+      <li>Supports frontend integration folders</li>
+      <li>Improves developer productivity</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Practical Workflow</h2>
+
+    <div class="workflow">
+      Empty Folder → Right Click → Scaffold Express Boilerplate → Complete Express Structure Generated
+    </div>
+
+    <p>
+      The developer opens an empty folder in VS Code, right-clicks the folder inside Explorer,
+      and selects the command "Scaffold Express Boilerplate".
+      The extension automatically generates the required backend project structure.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Generated Project Structure</h2>
+
+<pre>
+Config/
+ForFrontEnd/
+Public/
+.env
+.env.local
+app.js
+config.json
+configLoader.js
+port.js
+routes.js
+server.js
+package.json
+</pre>
+
+  </section>
+
+  <section>
+    <h2>5. Explanation of Generated Files</h2>
+
+    <ul>
+      <li><strong>Config/</strong> → Stores configuration-related files.</li>
+      <li><strong>ForFrontEnd/</strong> → Used for frontend integration support.</li>
+      <li><strong>Public/</strong> → Stores static files such as images and frontend assets.</li>
+      <li><strong>.env</strong> → Contains environment variables.</li>
+      <li><strong>.env.local</strong> → Stores local development environment variables.</li>
+      <li><strong>app.js</strong> → Main Express application setup.</li>
+      <li><strong>config.json</strong> → Stores application configuration data.</li>
+      <li><strong>configLoader.js</strong> → Loads configuration dynamically.</li>
+      <li><strong>port.js</strong> → Handles port normalization and validation.</li>
+      <li><strong>routes.js</strong> → Central routing configuration file.</li>
+      <li><strong>server.js</strong> → Starts HTTP server separately from application logic.</li>
+      <li><strong>package.json</strong> → Contains project metadata and dependencies.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Architecture Understanding</h2>
+
+<pre>
+VS Code Explorer
+        ↓
+Right Click Command
+        ↓
+EndPointGen Extension
+        ↓
+Command Handler
+        ↓
+Filesystem Generation
+        ↓
+Express Boilerplate Created
+</pre>
+
+    <p>
+      The extension follows an orchestration-based architecture where commands trigger automated file generation logic.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Features Observed</h2>
+
+    <ul>
+      <li>Automatic Express project generation</li>
+      <li>Environment configuration support</li>
+      <li>Static file hosting setup</li>
+      <li>Frontend integration folder support</li>
+      <li>Modular server structure</li>
+      <li>Routing separation</li>
+      <li>Professional backend architecture</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Benefits</h2>
+
+    <ul>
+      <li>Reduces setup time</li>
+      <li>Minimizes repetitive coding</li>
+      <li>Maintains consistent project structure</li>
+      <li>Helps beginners start backend development quickly</li>
+      <li>Improves scalability and maintainability</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Step-by-Step User Usage</h2>
+
+    <p>
+      This section demonstrates the complete real-world workflow of using the <span class="highlight">Scaffold Express Boilerplate</span>
+      command inside Visual Studio Code.
+    </p>
+
+    <div class="workflow">
+      Install Extension → Open Empty Folder → Right Click → Generate Boilerplate → Run Server
+    </div>
+
+    <div style="margin-top:35px;padding:25px;border-radius:20px;background:linear-gradient(135deg,#111827,#1e293b);box-shadow:0 10px 25px rgba(0,0,0,0.35);">
+      <h3 style="color:#facc15;font-size:28px;">Step 1 — Open Visual Studio Code</h3>
+      <p style="margin-top:10px;">Launch Visual Studio Code and open the welcome page.</p>
+      <img src="screenshots/vscode.png" alt="VS Code Welcome" style="width:100%;margin-top:20px;border-radius:18px;border:3px solid #38bdf8;box-shadow:0 8px 20px rgba(56,189,248,0.4);">
+    </div>
+
+    <div style="margin-top:35px;padding:25px;border-radius:20px;background:linear-gradient(135deg,#172554,#1e3a8a);box-shadow:0 10px 25px rgba(0,0,0,0.35);">
+      <h3 style="color:#facc15;font-size:28px;">Step 2 — Install EndPointGen Extension</h3>
+      <p style="margin-top:10px;">
+        Open the Extensions Marketplace using <strong>Ctrl + Shift + X</strong>, search for <span class="highlight">EndPointGen</span>, and install the extension.
+      </p>
+
+      <a href="https://marketplace.visualstudio.com/" target="_blank" style="display:inline-block;margin-top:18px;padding:12px 20px;background:#06b6d4;color:white;text-decoration:none;border-radius:12px;font-weight:bold;">
+        Open VS Code Marketplace
+      </a>
+
+      <img src="screenshots/extension install.png" alt="Install Extension" style="width:100%;margin-top:20px;border-radius:18px;border:3px solid #22c55e;box-shadow:0 8px 20px rgba(34,197,94,0.4);">
+    </div>
+
+    <div style="margin-top:35px;padding:25px;border-radius:20px;background:linear-gradient(135deg,#3f0d12,#a71d31);box-shadow:0 10px 25px rgba(0,0,0,0.35);">
+      <h3 style="color:#facc15;font-size:28px;">Step 3 — Create and Open Empty Folder</h3>
+      <p style="margin-top:10px;">
+        Create an empty folder such as <strong>testendpointgen</strong> and open it inside VS Code.
+      </p>
+
+      <img src="screenshots/empty folder.png" alt="Empty Folder" style="width:100%;margin-top:20px;border-radius:18px;border:3px solid #f472b6;box-shadow:0 8px 20px rgba(244,114,182,0.4);">
+    </div>
+
+    <div style="margin-top:35px;padding:25px;border-radius:20px;background:linear-gradient(135deg,#064e3b,#065f46);box-shadow:0 10px 25px rgba(0,0,0,0.35);">
+      <h3 style="color:#facc15;font-size:28px;">Step 4 — Right Click and Select Scaffold Command</h3>
+      <p style="margin-top:10px;">
+        Right click the project folder in Explorer and select <span class="highlight">Scaffold Express Boilerplate</span>.
+      </p>
+
+      <img src="screenshots/rightclick.png" alt="Right Click Scaffold" style="width:100%;margin-top:20px;border-radius:18px;border:3px solid #facc15;box-shadow:0 8px 20px rgba(250,204,21,0.4);">
+    </div>
+
+    <div style="margin-top:35px;padding:25px;border-radius:20px;background:linear-gradient(135deg,#312e81,#4f46e5);box-shadow:0 10px 25px rgba(0,0,0,0.35);">
+      <h3 style="color:#facc15;font-size:28px;">Step 5 — Automatic Boilerplate Generation</h3>
+      <p style="margin-top:10px;">
+        The extension automatically generates the complete Express.js backend architecture.
+      </p>
+
+<pre>
+Config/
+Public/
+.env
+.env.local
+app.js
+config.json
+configLoader.js
+port.js
+routes.js
+server.js
+package.json
+</pre>
+
+      <img src="screenshots/generated.png" alt="Generated Boilerplate" style="width:100%;margin-top:20px;border-radius:18px;border:3px solid #38bdf8;box-shadow:0 8px 20px rgba(56,189,248,0.4);">
+    </div>
+
+    <div style="margin-top:35px;padding:25px;border-radius:20px;background:linear-gradient(135deg,#7c2d12,#ea580c);box-shadow:0 10px 25px rgba(0,0,0,0.35);">
+      <h3 style="color:#facc15;font-size:28px;">Step 6 — Install Dependencies and Run Server</h3>
+      <p style="margin-top:10px;">
+        Open the integrated terminal and execute the following commands.
+      </p>
+
+<pre>
+npm install
+node server.js
+</pre>
+
+      <img src="screenshots/terminal.png" alt="Run Server" style="width:100%;margin-top:20px;border-radius:18px;border:3px solid #22c55e;box-shadow:0 8px 20px rgba(34,197,94,0.4);">
+    </div>
+
+  </section>
+
+  <section>
+    <h2>10. Extension Links and Resources</h2>
+
+    <ul>
+      <li>
+        <strong>VS Code Marketplace:</strong>
+        <a href="https://marketplace.visualstudio.com/" target="_blank" style="color:#38bdf8;">
+          https://marketplace.visualstudio.com/
+        </a>
+      </li>
+
+      <li>
+        <strong>Visual Studio Code:</strong>
+        <a href="https://code.visualstudio.com/" target="_blank" style="color:#38bdf8;">
+          https://code.visualstudio.com/
+        </a>
+      </li>
+
+      <li>
+        <strong>Node.js:</strong>
+        <a href="https://nodejs.org/" target="_blank" style="color:#38bdf8;">
+          https://nodejs.org/
+        </a>
+      </li>
+
+      <li>
+        <strong>Express.js:</strong>
+        <a href="https://expressjs.com/" target="_blank" style="color:#38bdf8;">
+          https://expressjs.com/
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>11. Conclusion</h2>
+
+    <p>
+      Scaffold Express Boilerplate is a powerful productivity-focused automation command provided by the EndPointGen extension.
+      It converts an empty folder into a professional Express.js backend architecture using a single Explorer context-menu action.
+      The extension simplifies backend initialization, improves consistency, and accelerates development workflows.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  Prepared for Internal Documentation and Exploration of EndPointGen Extension
+</footer>
+
+</body>
+</html>

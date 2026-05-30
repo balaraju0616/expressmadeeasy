@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Real Express Problems We Faced</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+            min-height:100vh;
+        }
+
+        .container{
+            width:90%;
+            max-width:1100px;
+            margin:auto;
+            padding:50px 20px;
+        }
+
+        h1{
+            text-align:center;
+            font-size:42px;
+            color:#38bdf8;
+            margin-bottom:20px;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#cbd5e1;
+            margin-bottom:50px;
+            font-size:18px;
+        }
+
+        .problem{
+            background:#1e293b;
+            padding:30px;
+            border-radius:16px;
+            margin-bottom:35px;
+            border-left:6px solid #ef4444;
+        }
+
+        .problem h2{
+            color:#facc15;
+            margin-bottom:20px;
+        }
+
+        .problem p{
+            margin-bottom:18px;
+            line-height:1.7;
+            color:#cbd5e1;
+        }
+
+        .module{
+            background:#14532d;
+            color:#86efac;
+            padding:12px 18px;
+            border-radius:10px;
+            margin-bottom:20px;
+            font-weight:bold;
+        }
+
+        pre{
+            background:#020617;
+            color:#4ade80;
+            padding:15px;
+            border-radius:10px;
+            overflow-x:auto;
+            margin-top:10px;
+            margin-bottom:20px;
+        }
+
+        .fix{
+            color:#22c55e;
+            font-weight:bold;
+            margin-top:10px;
+        }
+
+        code{
+            background:#020617;
+            color:#4ade80;
+            padding:3px 6px;
+            border-radius:6px;
+        }
+
+        ul{
+            padding-left:20px;
+        }
+
+        ul li{
+            margin-bottom:12px;
+            line-height:1.7;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Real Express Problems We Faced</h1>
+
+        <p class="subtitle">
+            Actual backend and Express.js runtime issues faced while using
+            KeshavSoft npm modules and VS Code extensions.
+        </p>
+
+        <!-- Problem 1 -->
+
+        <div class="problem">
+
+            <h2>1. AddSubRoute Command Not Found</h2>
+
+            <div class="module">
+                Module / Extension:
+                express api sub routes generate
+            </div>
+
+            <p>
+                VS Code failed to detect the AddSubRoute command.
+            </p>
+
+<pre>
+command 'extension.editor.title.addSubRoute' not found
+</pre>
+
+            <p class="fix">
+                Fix:
+            </p>
+
+            <p>
+                Reload VS Code or reinstall extension correctly.
+            </p>
+
+        </div>
+
+        <!-- Problem 2 -->
+
+        <div class="problem">
+
+            <h2>2. Wrong Generated Import Path</h2>
+
+            <div class="module">
+                Module:
+                @keshavsoft/kschema-api-gen
+            </div>
+
+            <p>
+                After generating ShowAll API,
+                Node.js failed to locate routes.js.
+            </p>
+
+<pre>
+Cannot find module 'V1/routes.js'
+</pre>
+
+            <p>
+                Actual file existed inside:
+            </p>
+
+<pre>
+Api/V1/routes.js
+</pre>
+
+            <p class="fix">
+                Fix:
+            </p>
+
+<pre>
+import { router } from "./Api/V1/routes.js";
+</pre>
+
+        </div>
+
+        <!-- Problem 3 -->
+
+        <div class="problem">
+
+            <h2>3. Default Export Error</h2>
+
+            <div class="module">
+                Module:
+                ks-express-boilerplate
+            </div>
+
+            <p>
+                app.js imported default export,
+                but routes.js exported named router.
+            </p>
+
+<pre>
+does not provide an export named 'default'
+</pre>
+
+            <p class="fix">
+                Fix:
+            </p>
+
+<pre>
+export default router;
+</pre>
+
+            <p>
+                OR use named import correctly.
+            </p>
+
+        </div>
+
+        <!-- Problem 4 -->
+
+        <div class="problem">
+
+            <h2>4. Router Callback Required Error</h2>
+
+            <div class="module">
+                Modules:
+                ks-express-boilerplate +
+                express api generator +
+                kschema-api-gen
+            </div>
+
+            <p>
+                Invalid router object passed into app.use().
+            </p>
+
+<pre>
+TypeError: argument callback is required
+</pre>
+
+            <p class="fix">
+                Fix:
+            </p>
+
+            <p>
+                Correct router import/export structure.
+            </p>
+
+        </div>
+
+        <!-- Problem 5 -->
+
+        <div class="problem">
+
+            <h2>5. API Route Mounting Problem</h2>
+
+            <div class="module">
+                Module:
+                express api generator
+            </div>
+
+            <p>
+                Generated routes existed,
+                but app.js was not connecting routes properly.
+            </p>
+
+            <p class="fix">
+                Final Working Fix:
+            </p>
+
+<pre>
+import { router as routerFromApi } from "./Api/routes.js";
+
+app.use("/Api", routerFromApi);
+</pre>
+
+        </div>
+
+        <!-- Problem 6 -->
+
+        <div class="problem">
+
+            <h2>6. setupRoutes() vs app.use() Confusion</h2>
+
+            <div class="module">
+                Modules:
+                ks-express-boilerplate +
+                express api generator
+            </div>
+
+            <p>
+                Both routing systems existed simultaneously.
+            </p>
+
+<pre>
+setupRoutes(app);
+
+app.use("/Api", routerFromApi);
+</pre>
+
+            <p>
+                This created confusion about route ownership.
+            </p>
+
+        </div>
+
+        <!-- Problem 7 -->
+
+        <div class="problem">
+
+            <h2>7. Wrong Working Directory</h2>
+
+            <div class="module">
+                Module:
+                @keshavsoft/kschema-api-gen-actions
+            </div>
+
+            <p>
+                Generators depended on:
+            </p>
+
+<pre>
+process.cwd()
+</pre>
+
+            <p>
+                Running commands from wrong folder
+                generated incorrect structure and imports.
+            </p>
+
+        </div>
+
+        <!-- Problem 8 -->
+
+        <div class="problem">
+
+            <h2>8. Route Hierarchy Dependency</h2>
+
+            <div class="module">
+                Modules:
+                express api generator +
+                express api sub routes generate +
+                express api endpoints generate +
+                kschema-api-gen-actions
+            </div>
+
+            <p>
+                Entire API flow depended on proper route chain:
+            </p>
+
+<pre>
+app.js
+ ↓
+Api/routes.js
+ ↓
+Api/V1/routes.js
+ ↓
+Api/V1/journals/end-points.js
+</pre>
+
+            <p>
+                One broken import/export stopped the API completely.
+            </p>
+
+        </div>
+
+        <!-- Problem 9 -->
+
+        <div class="problem">
+
+            <h2>9. Automatic Import Updates</h2>
+
+            <div class="module">
+                Module:
+                @keshavsoft/kschema-api-gen-actions
+            </div>
+
+            <p>
+                npm generators automatically modified source files using:
+            </p>
+
+<pre>
+updateImports.js
+updateUse/index.js
+</pre>
+
+            <p>
+                This could create:
+            </p>
+
+            <ul>
+
+                <li>Wrong insertion position</li>
+
+                <li>Broken imports</li>
+
+                <li>Malformed routes</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Problem 10 -->
+
+        <div class="problem">
+
+            <h2>10. Duplicate Prevention Requirement</h2>
+
+            <div class="module">
+                Module:
+                @keshavsoft/kschema-api-gen-actions
+            </div>
+
+            <p>
+                Generator already contained:
+            </p>
+
+<pre>
+checkDuplicate.js
+</pre>
+
+            <p>
+                Because repeated generation could create:
+            </p>
+
+<pre>
+router.get('/ShowAll', ...)
+router.get('/ShowAll', ...)
+</pre>
+
+        </div>
+
+        <!-- Problem 11 -->
+
+        <div class="problem">
+
+            <h2>11. end-points.js Auto Modification</h2>
+
+            <div class="module">
+                Module:
+                @keshavsoft/kschema-api-gen-actions
+            </div>
+
+            <p>
+                Action generators automatically updated:
+            </p>
+
+<pre>
+end-points.js
+</pre>
+
+            <p>
+                Incorrect updates could break routing structure.
+            </p>
+
+        </div>
+
+        <!-- Problem 12 -->
+
+        <div class="problem">
+
+            <h2>12. Boilerplate Generated But Runtime Failed</h2>
+
+            <div class="module">
+                Modules:
+                ks-express-boilerplate +
+                route generators
+            </div>
+
+            <p>
+                Folder structure generated correctly:
+            </p>
+
+<pre>
+Api/
+V1/
+journals/
+</pre>
+
+            <p>
+                But runtime still failed because:
+            </p>
+
+            <ul>
+
+                <li>Wrong imports</li>
+
+                <li>Wrong exports</li>
+
+                <li>Missing route linkage</li>
+
+                <li>ESM module mismatch</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Final -->
+
+        <div class="problem" style="border-left:6px solid #22c55e;">
+
+            <h2>Conclusion</h2>
+
+            <p>
+                These were real Express.js and backend problems
+                faced while using:
+            </p>
+
+            <ul>
+
+                <li>ks-express-boilerplate</li>
+
+                <li>express api generator</li>
+
+                <li>express api sub routes generate</li>
+
+                <li>express api endpoints generate</li>
+
+                <li>@keshavsoft/kschema-api-gen</li>
+
+                <li>@keshavsoft/kschema-api-gen-actions</li>
+
+            </ul>
+
+            <p>
+                These issues helped us understand:
+            </p>
+
+            <ul>
+
+                <li>Express route hierarchy</li>
+
+                <li>ESM imports and exports</li>
+
+                <li>Automatic code generation</li>
+
+                <li>Dynamic source code modification</li>
+
+                <li>Scalable backend architecture</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
