@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Experience with EndPointGen</title>
+
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:
+  radial-gradient(circle at top left,#7c3aed33,transparent 30%),
+  radial-gradient(circle at bottom right,#06b6d433,transparent 30%),
+  linear-gradient(135deg,#020617,#0f172a,#111827);
+  color:white;
+  line-height:1.9;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:#7c3aed;
+  filter:blur(180px);
+  top:-150px;
+  left:-100px;
+  opacity:0.25;
+  z-index:-1;
+}
+
+body::after{
+  content:'';
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:#06b6d4;
+  filter:blur(180px);
+  bottom:-150px;
+  right:-100px;
+  opacity:0.25;
+  z-index:-1;
+}
+
+header{
+  text-align:center;
+  padding:90px 20px;
+  background:
+  linear-gradient(135deg,
+  rgba(124,58,237,0.9),
+  rgba(37,99,235,0.9),
+  rgba(6,182,212,0.9));
+  box-shadow:0 15px 40px rgba(0,0,0,0.45);
+  position:relative;
+  overflow:hidden;
+}
+
+header::before,
+header::after{
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,0.12);
+}
+
+header::before{
+  width:250px;
+  height:250px;
+  top:-60px;
+  left:-60px;
+}
+
+header::after{
+  width:300px;
+  height:300px;
+  bottom:-120px;
+  right:-80px;
+}
+
+header h1{
+  font-size:68px;
+  margin-bottom:18px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-shadow:
+  0 0 15px rgba(255,255,255,0.25),
+  0 0 35px rgba(0,0,0,0.35);
+}
+
+header p{
+  font-size:24px;
+  opacity:0.95;
+  font-weight:400;
+}
+
+.container{
+  width:92%;
+  max-width:1200px;
+  margin:auto;
+  padding:60px 0;
+}
+
+.card{
+  position:relative;
+  background:rgba(255,255,255,0.07);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.12);
+  padding:40px;
+  border-radius:28px;
+  margin-bottom:40px;
+  overflow:hidden;
+  box-shadow:
+  0 10px 35px rgba(0,0,0,0.35),
+  inset 0 1px 1px rgba(255,255,255,0.08);
+  transition:all 0.45s ease;
+}
+
+.card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  padding:2px;
+  border-radius:28px;
+  background:linear-gradient(
+  135deg,
+  #7c3aed,
+  #2563eb,
+  #06b6d4,
+  #f472b6);
+  -webkit-mask:
+  linear-gradient(#fff 0 0) content-box,
+  linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.015);
+  box-shadow:
+  0 18px 45px rgba(37,99,235,0.35),
+  0 0 35px rgba(124,58,237,0.25);
+}
+
+h2{
+  font-size:38px;
+  margin-bottom:25px;
+  color:#38bdf8;
+  position:relative;
+  padding-left:20px;
+  font-weight:700;
+}
+
+h2::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:5px;
+  width:6px;
+  height:90%;
+  border-radius:10px;
+  background:linear-gradient(#06b6d4,#7c3aed);
+}
+
+p{
+  font-size:20px;
+  color:#e2e8f0;
+  margin-top:18px;
+  font-weight:300;
+}
+
+.highlight{
+  background:linear-gradient(135deg,#facc15,#fb7185);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:700;
+}
+
+.journey{
+  margin:35px 0;
+  padding:28px;
+  border-radius:22px;
+  text-align:center;
+  font-size:26px;
+  font-weight:700;
+  color:white;
+  background:
+  linear-gradient(135deg,
+  #2563eb,
+  #7c3aed,
+  #ec4899);
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.4),
+  0 0 25px rgba(124,58,237,0.35);
+  animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+
+  from{
+    box-shadow:
+    0 0 15px rgba(37,99,235,0.3),
+    0 0 25px rgba(124,58,237,0.3);
+  }
+
+  to{
+    box-shadow:
+    0 0 30px rgba(37,99,235,0.55),
+    0 0 45px rgba(236,72,153,0.45);
+  }
+}
+
+footer{
+  text-align:center;
+  padding:35px;
+  margin-top:50px;
+  background:
+  linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:#cbd5e1;
+  font-size:18px;
+  letter-spacing:0.5px;
+  box-shadow:0 -5px 25px rgba(0,0,0,0.35);
+}
+
+@media(max-width:768px){
+
+  header h1{
+    font-size:42px;
+  }
+
+  header p{
+    font-size:20px;
+  }
+
+  h2{
+    font-size:28px;
+  }
+
+  p{
+    font-size:17px;
+  }
+
+  .journey{
+    font-size:20px;
+  }
+
+  .card{
+    padding:28px;
+  }
+}
+
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>My Experience with EndPointGen</h1>
+  <p>A Story of Exploring the VS Code Extension</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Introduction</h2>
+
+    <p>
+      When I first started exploring the <span class="highlight">EndPointGen</span> extension,
+      I was curious about how a VS Code extension could automate backend development.
+      Initially, I thought it would only create a few files, but after using it practically,
+      I realized that it was designed to generate a complete Express.js project structure professionally.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>My First Experience</h2>
+
+    <p>
+      I began by opening an empty folder inside Visual Studio Code.
+      After installing the extension, I explored the right-click context menu options.
+      The command that attracted me the most was
+      <span class="highlight">“Scaffold Express Boilerplate”</span>.
+    </p>
+
+    <div class="journey">
+      Empty Folder → Right Click → Scaffold Express Boilerplate → Complete Backend Generated
+    </div>
+
+    <p>
+      The moment I clicked the command, the extension automatically generated folders,
+      configuration files, environment files, server setup files, and routing architecture instantly.
+      Watching an empty folder transform into a professional backend structure within seconds
+      was the most exciting part of the experience.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>What I Enjoyed the Most</h2>
+
+    <p>
+      The thing I enjoyed most was the automation experience.
+      Normally, backend initialization requires creating multiple folders and files manually.
+      However, this extension simplified the entire process using a single Explorer action.
+    </p>
+
+    <p>
+      I also liked how organized the generated structure was.
+      Instead of placing everything inside one file,
+      the extension separated server setup, configuration handling, routes,
+      environment management, and frontend integration support into modular files.
+    </p>
+
+    <p>
+      Another interesting part was the smooth integration with the VS Code Explorer.
+      Using right-click actions felt natural and developer-friendly.
+      It improved the development workflow and made project setup feel effortless.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>What I Learned</h2>
+
+    <p>
+      Through this exploration, I learned how modern VS Code extensions can automate repetitive tasks
+      and improve developer productivity.
+      I understood the importance of scaffolding systems and modular backend architecture.
+    </p>
+
+    <p>
+      I also observed how professional backend projects are structured using configuration files,
+      environment variables, routing layers, and separate server initialization logic.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <h2>Overall Experience</h2>
+
+    <p>
+      Overall, exploring EndPointGen was an interesting and enjoyable experience.
+      It showed me how developer tools can simplify complex workflows and save significant setup time.
+      The extension not only automated backend generation but also demonstrated clean project organization practices.
+    </p>
+
+    <p>
+      This experience helped me better understand Express.js project structure,
+      VS Code extension workflows, and the value of automation in modern software development.
+    </p>
+
+  </div>
+
+</div>
+
+<footer>
+  Documentation Story — Experience with EndPointGen VS Code Extension
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scaffold Express Boilerplate - Documentation Story</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
+      color: #f8fafc;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #7c3aed, #2563eb, #06b6d4);
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+
+    header p {
+      font-size: 20px;
+      opacity: 0.95;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    section {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 30px;
+      padding: 35px;
+      border-radius: 20px;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    section:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 12px 30px rgba(37,99,235,0.35);
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #38bdf8;
+      border-left: 6px solid #06b6d4;
+      padding-left: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #e2e8f0;
+    }
+
+    ul {
+      padding-left: 25px;
+      margin-top: 15px;
+    }
+
+    ul li {
+      margin-bottom: 14px;
+      font-size: 18px;
+      color: #f1f5f9;
+    }
+
+    strong {
+      color: #facc15;
+    }
+
+    pre {
+      background: #020617;
+      color: #67e8f9;
+      padding: 20px;
+      border-radius: 14px;
+      overflow-x: auto;
+      margin-top: 20px;
+      border: 1px solid #334155;
+      font-size: 16px;
+    }
+
+    .workflow {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      padding: 20px;
+      border-radius: 14px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      margin: 25px 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    .highlight {
+      color: #f472b6;
+      font-weight: bold;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      padding: 30px;
+      text-align: center;
+      font-size: 18px;
+      margin-top: 40px;
+      border-top: 2px solid rgba(255,255,255,0.1);
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      section {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Scaffold Express Boilerplate</h1>
+  <p>EndPointGen VS Code Extension Documentation Story</p>
+</header>
+
+<div class="container">
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>
+      Scaffold Express Boilerplate is a command provided by the EndPointGen VS Code extension.
+      The purpose of this command is to automatically generate a professional Express.js backend project structure
+      from an empty folder using a single right-click action inside Visual Studio Code.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Objective</h2>
+    <p>
+      The main goal of this command is to reduce repetitive backend setup work and provide developers with a ready-to-use
+      Express.js architecture instantly.
+    </p>
+
+    <ul>
+      <li>Automates Express backend scaffolding</li>
+      <li>Creates modular backend architecture</li>
+      <li>Reduces manual file creation</li>
+      <li>Provides environment configuration support</li>
+      <li>Supports frontend integration folders</li>
+      <li>Improves developer productivity</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Practical Workflow</h2>
+
+    <div class="workflow">
+      Empty Folder → Right Click → Scaffold Express Boilerplate → Complete Express Structure Generated
+    </div>
+
+    <p>
+      The developer opens an empty folder in VS Code, right-clicks the folder inside Explorer,
+      and selects the command "Scaffold Express Boilerplate".
+      The extension automatically generates the required backend project structure.
+    </p>
+  </section>
+
+  <section>
+    <h2>4. Generated Project Structure</h2>
+
+<pre>
+Config/
+ForFrontEnd/
+Public/
+.env
+.env.local
+app.js
+config.json
+configLoader.js
+port.js
+routes.js
+server.js
+package.json
+</pre>
+
+  </section>
+
+  <section>
+    <h2>5. Explanation of Generated Files</h2>
+
+    <ul>
+      <li><strong>Config/</strong> → Stores configuration-related files.</li>
+      <li><strong>ForFrontEnd/</strong> → Used for frontend integration support.</li>
+      <li><strong>Public/</strong> → Stores static files such as images and frontend assets.</li>
+      <li><strong>.env</strong> → Contains environment variables.</li>
+      <li><strong>.env.local</strong> → Stores local development environment variables.</li>
+      <li><strong>app.js</strong> → Main Express application setup.</li>
+      <li><strong>config.json</strong> → Stores application configuration data.</li>
+      <li><strong>configLoader.js</strong> → Loads configuration dynamically.</li>
+      <li><strong>port.js</strong> → Handles port normalization and validation.</li>
+      <li><strong>routes.js</strong> → Central routing configuration file.</li>
+      <li><strong>server.js</strong> → Starts HTTP server separately from application logic.</li>
+      <li><strong>package.json</strong> → Contains project metadata and dependencies.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Architecture Understanding</h2>
+
+<pre>
+VS Code Explorer
+        ↓
+Right Click Command
+        ↓
+EndPointGen Extension
+        ↓
+Command Handler
+        ↓
+Filesystem Generation
+        ↓
+Express Boilerplate Created
+</pre>
+
+    <p>
+      The extension follows an orchestration-based architecture where commands trigger automated file generation logic.
+    </p>
+  </section>
+
+  <section>
+    <h2>7. Features Observed</h2>
+
+    <ul>
+      <li>Automatic Express project generation</li>
+      <li>Environment configuration support</li>
+      <li>Static file hosting setup</li>
+      <li>Frontend integration folder support</li>
+      <li>Modular server structure</li>
+      <li>Routing separation</li>
+      <li>Professional backend architecture</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Benefits</h2>
+
+    <ul>
+      <li>Reduces setup time</li>
+      <li>Minimizes repetitive coding</li>
+      <li>Maintains consistent project structure</li>
+      <li>Helps beginners start backend development quickly</li>
+      <li>Improves scalability and maintainability</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Conclusion</h2>
+
+    <p>
+      Scaffold Express Boilerplate is a productivity-focused automation command inside the EndPointGen VS Code extension.
+      It transforms an empty folder into a structured Express.js backend project using a single Explorer context-menu action.
+      The command simplifies backend initialization and promotes modular development practices.
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  Prepared for Internal Documentation and Exploration of EndPointGen Extension
+</footer>
+
+</body>
+</html>
