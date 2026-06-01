@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EndPointGen Documentation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      line-height: 1.7;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 60px;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      text-align: left;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+
+    .section {
+      background: #111827;
+      border-radius: 22px;
+      padding: 40px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section h2 {
+      color: #38bdf8;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-align: left;
+    }
+
+    .section p {
+      color: #d1d5db;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 18px;
+      padding: 24px;
+      border-left: 5px solid #38bdf8;
+    }
+
+    .card h3 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      color: #d1d5db;
+    }
+
+    .highlight {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    .workflow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 220px;
+      background: #1e293b;
+      padding: 24px;
+      border-radius: 18px;
+      border-top: 4px solid #38bdf8;
+    }
+
+    .step span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #38bdf8;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #94a3b8;
+      padding-bottom: 20px;
+    }
+
+    @media(max-width:768px){
+      body{
+        padding:20px;
+      }
+
+      .hero{
+        padding:35px;
+      }
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="hero">
+      <h1>EndPointGen</h1>
+      <p>
+        EndPointGen is a Visual Studio Code extension designed to accelerate backend API development using Node.js, Express, and KeshavSoft architecture patterns. The extension helps developers automatically generate routes, endpoints, CRUD operations, modular folder structures, and service layers directly from VS Code.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Why Developers Should Use EndPointGen</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Rapid Backend Development</h3>
+          <p>
+            Generate production-ready CRUD APIs within seconds instead of manually creating repetitive route and controller files.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Clean Architecture</h3>
+          <p>
+            Automatically separates routes, services, controllers, middleware, and errors into modular components.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Developer Productivity</h3>
+          <p>
+            Removes boilerplate coding and allows developers to focus more on business logic and application features.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Consistent Structure</h3>
+          <p>
+            Every endpoint follows a predictable and scalable structure, making collaboration easier for teams.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Core Features</h2>
+
+      <ul>
+        <li><span class="highlight">ShowAll</span> - Retrieve all records from a table.</li>
+        <li><span class="highlight">Find</span> - Fetch a single record using a primary key.</li>
+        <li><span class="highlight">Filter</span> - Return multiple matching records based on conditions.</li>
+        <li><span class="highlight">Insert</span> - Add new records with automatic primary key generation.</li>
+        <li><span class="highlight">Delete</span> - Remove records safely using primary key validation.</li>
+        <li><span class="highlight">Alter</span> - Update existing records dynamically.</li>
+        <li><span class="highlight">Automatic Route Generation</span> - Creates Express routes automatically.</li>
+        <li><span class="highlight">HTTP Request Templates</span> - Generates rest.http files for quick API testing.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Generated Backend Architecture</h2>
+
+      <p>
+        EndPointGen follows a layered backend architecture that separates responsibilities into independent modules. This improves scalability, maintainability, debugging, and team collaboration.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Routes Layer</h3>
+          <p>
+            Handles API endpoint registration and request routing using Express Router.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Controller Layer</h3>
+          <p>
+            Processes requests and responses while coordinating business operations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Service Layer</h3>
+          <p>
+            Contains database interaction and kschema query or mutate operations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Middleware Layer</h3>
+          <p>
+            Performs request validation, body checks, and error handling before processing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>KSchema Query & Mutate Architecture</h2>
+
+      <p>
+        The extension integrates with <span class="highlight">@keshavsoft/kschema</span> to simplify data management using structured query and mutate APIs.
+      </p>
+
+      <div class="workflow">
+        <div class="step">
+          <span>01</span>
+          <h3>Query Operations</h3>
+          <p>
+            Includes findAll(), findByPk(), filterByPk(), and filterByColumns() for retrieving records.
+          </p>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <h3>Mutate Operations</h3>
+          <p>
+            Includes insertGenPk(), deleteWithChecks(), and updateWithChecks() for modifying data.
+          </p>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <h3>Structured JSON Storage</h3>
+          <p>
+            Uses JSON-based table storage which makes development lightweight and easy to understand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Developer Workflow</h2>
+
+      <div class="workflow">
+        <div class="step">
+          <span>1</span>
+          <h3>Initialize Project</h3>
+          <p>
+            Create the Express backend structure directly from VS Code.
+          </p>
+        </div>
+
+        <div class="step">
+          <span>2</span>
+          <h3>Create Endpoints</h3>
+          <p>
+            Generate CRUD APIs like Insert, Find, Filter, ShowAll, Delete, and Alter.
+          </p>
+        </div>
+
+        <div class="step">
+          <span>3</span>
+          <h3>Test APIs</h3>
+          <p>
+            Use generated rest.http files to test endpoints quickly without external tools.
+          </p>
+        </div>
+
+        <div class="step">
+          <span>4</span>
+          <h3>Scale Easily</h3>
+          <p>
+            Add new modules and routes without changing existing architecture.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Advantages of EndPointGen</h2>
+
+      <ul>
+        <li>Reduces repetitive backend coding.</li>
+        <li>Improves code organization and maintainability.</li>
+        <li>Accelerates API development speed.</li>
+        <li>Helps beginners understand backend architecture clearly.</li>
+        <li>Supports modular and scalable Express.js applications.</li>
+        <li>Encourages clean separation of concerns.</li>
+        <li>Provides fast API testing workflow using HTTP files.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Conclusion</h2>
+
+      <p>
+        EndPointGen is more than just a code generation extension. It acts as a backend development accelerator that teaches developers modern API architecture while significantly reducing development time.
+      </p>
+
+      <p>
+        By combining Express.js, modular routing, controller-service architecture, and KSchema operations, the extension provides a practical and scalable solution for real-world backend application development.
+      </p>
+    </section>
+
+    <div class="footer">
+      <p>EndPointGen Documentation • Backend Development Simplified</p>
+    </div>
+
+  </div>
+</body>
+</html>

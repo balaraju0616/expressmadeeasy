@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Route Hierarchy Explained</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:white;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+.container{width:90%;max-width:1100px;margin:auto;padding:50px 20px}
+h1{text-align:center;font-size:36px;color:#38bdf8;margin-bottom:16px}
+.subtitle{text-align:center;color:#cbd5e1;margin-bottom:40px;font-size:17px}
+.section{background:#1e293b;padding:28px;border-radius:14px;margin-bottom:28px;border-left:6px solid #38bdf8}
+.section h2{color:#facc15;margin-bottom:14px}
+.section p{color:#cbd5e1;line-height:1.7;margin-bottom:12px}
+pre{background:#020617;color:#4ade80;padding:14px;border-radius:10px;overflow-x:auto;margin:10px 0 16px}
+a.back{display:inline-block;margin-top:20px;padding:10px 22px;background:#38bdf8;color:black;text-decoration:none;border-radius:8px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Route Hierarchy Explained</h1>
+<p class="subtitle">How app.js → Api → V1 → journals → end-points.js connects</p>
+<div class="section"><h2>The Route Chain</h2><p>The entire Express backend is a chain of route files, each delegating to the next layer. Breaking any link stops the API completely.</p><pre>app.js
+ ↓
+Api/routes.js
+ ↓
+Api/V1/routes.js
+ ↓
+Api/V1/journals/end-points.js
+ ↓
+ShowAll/controller.js</pre></div>
+<div class="section"><h2>Why Layered Routing?</h2><p>Each layer has a single responsibility. app.js knows about the Api prefix. Api/routes.js knows about versions. V1/routes.js knows about table names. end-points.js knows about CRUD actions.</p><pre>app.use('/Api', apiRouter);
+// Api/routes.js
+router.use('/V1', v1Router);
+// V1/routes.js
+router.use('/journals', journalsRouter);</pre></div>
+<div class="section"><h2>What Breaks It</h2><p>A single wrong import path, a missing export, or a default/named export mismatch silently kills all routes below that layer.</p><pre>// Wrong — breaks the chain
+import router from './Api/V1/routes.js';
+// Right
+import { router } from './Api/V1/routes.js';</pre></div>
+
+<a href="../README.md" class="back">← Back to Overview</a>
+</div>
+</body>
+</html>

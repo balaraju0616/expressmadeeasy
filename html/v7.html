@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Developers Should Use EndPointGen</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f4f7fb;
+      color:#1e293b;
+      line-height:1.8;
+    }
+
+    .container{
+      width:85%;
+      max-width:950px;
+      margin:40px auto;
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#1d4ed8,#4338ca);
+      padding:45px;
+      border-radius:12px;
+      margin-bottom:30px;
+    }
+
+    .hero h1{
+      color:#ffffff;
+      font-size:42px;
+      margin-bottom:15px;
+      text-align:left;
+      letter-spacing:0.5px;
+    }
+
+    .hero p{
+      color:#e2e8f0;
+      font-size:18px;
+      max-width:700px;
+      line-height:1.8;
+    }
+
+    section{
+      background:white;
+      padding:35px;
+      border-radius:12px;
+      margin-bottom:25px;
+      border-left:6px solid #2563eb;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      transition:0.3s ease;
+    }
+
+    section:hover{
+      transform:translateY(-3px);
+    }
+
+    h2{
+      font-size:28px;
+      margin-bottom:18px;
+      color:#0f172a;
+      text-align:left;
+    }
+
+    p{
+      font-size:17px;
+      color:#475569;
+      margin-bottom:16px;
+    }
+
+    ul{
+      padding-left:20px;
+      margin-top:15px;
+    }
+
+    ul li{
+      margin-bottom:14px;
+      color:#334155;
+      font-size:16px;
+    }
+
+    .highlight{
+      color:#2563eb;
+      font-weight:bold;
+    }
+
+    .workflow{
+      background:#eff6ff;
+      border:1px solid #bfdbfe;
+      color:#1d4ed8;
+      padding:18px;
+      border-radius:10px;
+      margin-top:20px;
+      font-weight:bold;
+      text-align:center;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      color:#64748b;
+      font-size:15px;
+    }
+
+    @media(max-width:768px){
+
+      .container{
+        width:92%;
+      }
+
+      .hero{
+        padding:30px;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      h2{
+        font-size:24px;
+      }
+
+    }
+
+      .hero{
+        padding:30px;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+      h2{
+        font-size:24px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="hero">
+
+    <h1>EndPointGen Extension</h1>
+
+    <p>
+      A Visual Studio Code extension designed to simplify backend initialization,
+      CRUD endpoint generation, and Express.js project scaffolding.
+    </p>
+
+  </div>
+
+  <section>
+
+    <h2>Introduction</h2>
+
+    <p>
+      EndPointGen automates Express.js backend setup and CRUD endpoint generation.
+      It creates modular routes, controllers, services, and middleware directly inside VS Code.
+    </p>
+
+    <p>
+      The extension helps developers build backend projects faster with clean architecture.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Why Developers Should Use EndPointGen</h2>
+
+    <p>
+      Backend setup usually involves repetitive configuration and folder creation.
+      EndPointGen automates this process using simple VS Code commands.
+    </p>
+
+    <ul>
+      <li>Reduces repetitive backend coding</li>
+      <li>Improves API development speed</li>
+      <li>Creates modular architecture</li>
+      <li>Maintains clean project structure</li>
+      <li>Helps developers focus on logic</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>Scaffold Boilerplate Features</h2>
+
+    <ul>
+      <li><span class="highlight">Scaffold Express Boilerplate</span> - Generates backend starter structure</li>
+      <li><span class="highlight">Initialize Node API</span> - Quickly bootstrap APIs</li>
+      <li><span class="highlight">Environment Setup</span> - Supports env configuration</li>
+      <li><span class="highlight">Tally Integration</span> - Generates Tally backend structure</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>CRUD Endpoint Generation</h2>
+
+    <p>
+      The extension automatically creates CRUD APIs with modular routing.
+    </p>
+
+    <ul>
+      <li><span class="highlight">ShowAll</span> - Retrieve all records</li>
+      <li><span class="highlight">Find</span> - Get single record</li>
+      <li><span class="highlight">Filter</span> - Get matched records</li>
+      <li><span class="highlight">Insert</span> - Add new records</li>
+      <li><span class="highlight">Delete</span> - Remove records</li>
+      <li><span class="highlight">Alter</span> - Update records</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>KSchema Architecture</h2>
+
+    <p>
+      EndPointGen uses <span class="highlight">@keshavsoft/kschema</span>
+      for structured query and mutate operations.
+    </p>
+
+    <ul>
+      <li><span class="highlight">Query</span> - findAll(), findByPk(), filterByPk()</li>
+      <li><span class="highlight">Mutate</span> - insertGenPk(), deleteWithChecks(), updateWithChecks()</li>
+      <li><span class="highlight">JSON Storage</span> - Lightweight table-based storage</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>Developer Workflow</h2>
+
+    <div class="workflow">
+
+      Empty Folder → Right Click → Generate Boilerplate → Create Endpoints → Test APIs
+
+    </div>
+
+    <p style="margin-top:20px;">
+      Developers can quickly generate scalable backend APIs directly from VS Code without manually creating multiple files.
+    </p>
+
+  </section>
+
+  <section>
+
+    <h2>Benefits for Teams</h2>
+
+    <ul>
+      <li>Maintains consistent backend structure</li>
+      <li>Improves onboarding for developers</li>
+      <li>Reduces setup mistakes</li>
+      <li>Supports scalable architecture</li>
+    </ul>
+
+  </section>
+
+  <section>
+
+    <h2>Conclusion</h2>
+
+    <p>
+      EndPointGen simplifies backend development by automating Express.js initialization,
+      CRUD endpoint generation, and modular architecture creation.
+    </p>
+
+    <p>
+      The extension helps developers build scalable APIs faster while following clean backend development practices.
+    </p>
+
+  </section>
+
+</div>
+
+<footer>
+
+  EndPointGen Documentation — Developer Guide
+
+</footer>
+
+</body>
+</html>
