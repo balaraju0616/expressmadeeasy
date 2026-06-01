@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Step 4 — Generate API Actions</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:white;font-family:Arial;padding:40px}
+h1{color:#38bdf8;margin-bottom:20px;font-size:26px}
+p{margin-bottom:18px;line-height:1.7;color:#cbd5e1}
+pre{background:#020617;color:#4ade80;padding:15px;border-radius:10px;margin-bottom:18px;font-size:14px;line-height:1.6}
+code{background:#020617;color:#4ade80;padding:2px 6px;border-radius:4px}
+.back{display:inline-block;margin-top:30px;padding:12px 24px;background:#38bdf8;color:black;text-decoration:none;border-radius:10px;font-weight:bold}
+.ext{background:#1e3a5f;border-left:4px solid #38bdf8;padding:12px 16px;border-radius:8px;margin-bottom:18px;color:#93c5fd;font-weight:bold}
+.action{background:#1e293b;border-left:4px solid #22c55e;padding:16px 20px;border-radius:8px;margin-bottom:22px}
+.action h2{color:#facc15;margin-bottom:12px;font-size:17px}
+</style>
+</head>
+<body>
+
+  <h1>STEP 4 — Generate API Actions</h1>
+
+  <div class="ext">Extension: express-api-actions-generate</div>
+
+  <p>Open:</p>
+  <pre>Api/V1/journals/end-points.js</pre>
+
+  <!-- GET -->
+  <div class="action">
+    <h2>Action 1 — get (ShowAll)</h2>
+    <p>Click: <code>get</code></p>
+    <p>Select:</p>
+    <pre>ShowAll : get all data from table</pre>
+    <p>This generates:</p>
+    <pre>ShowAll/
+├── controller.js
+├── service.js
+├── errors.js
+└── rest.http</pre>
+  </div>
+
+  <!-- INSERT -->
+  <div class="action">
+    <h2>Action 2 — insert</h2>
+    <p>Click: <code>insert</code></p>
+    <p>Select:</p>
+    <pre>Insert : AsIs</pre>
+    <p>This generates:</p>
+    <pre>Insert/
+├── controller.js
+├── service.js
+├── errors.js
+├── middleware.js
+└── rest.http</pre>
+  </div>
+
+  <!-- DELETE -->
+  <div class="action">
+    <h2>Action 3 — delete</h2>
+    <p>Click: <code>delete</code></p>
+    <p>Select required delete type.</p>
+    <p>This generates:</p>
+    <pre>Delete/
+├── controller.js
+├── service.js
+├── errors.js
+└── rest.http</pre>
+    <p><code>end-points.js</code> is automatically updated — imports and routes are added.</p>
+  </div>
+
+  <!-- ALTER -->
+  <div class="action">
+    <h2>Action 4 — alter</h2>
+    <p>Click: <code>alter</code></p>
+    <p>This generates:</p>
+    <pre>Alter/
+├── controller.js
+├── service.js
+├── errors.js
+└── rest.http</pre>
+  </div>
+
+  <a class="back" href="index.html">← Back to Home</a>
+
+</body>
+</html>

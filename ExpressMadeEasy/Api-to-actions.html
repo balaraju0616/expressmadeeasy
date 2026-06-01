@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>KeshavSoft Express API Journey</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0f172a;color:white;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+.container{width:90%;max-width:1100px;margin:auto;padding:50px 20px}
+h1{text-align:center;font-size:42px;color:#38bdf8;margin-bottom:10px}
+.subtitle{text-align:center;color:#cbd5e1;margin-bottom:50px;font-size:18px}
+.step{background:#1e293b;padding:30px;border-radius:16px;margin-bottom:35px;border-left:6px solid #38bdf8}
+.step h2{color:#facc15;margin-bottom:16px;font-size:20px}
+.step p{margin-bottom:14px;line-height:1.7;color:#cbd5e1}
+.btn{display:inline-block;padding:14px 28px;background:#38bdf8;color:black;text-decoration:none;border-radius:10px;font-weight:bold}
+.btn:hover{background:#0ea5e9}
+pre{background:#020617;color:#4ade80;padding:15px;border-radius:10px;overflow-x:auto;margin-top:10px;margin-bottom:16px;font-size:14px;line-height:1.6}
+ul{padding-left:22px}
+ul li{margin-bottom:10px;line-height:1.7;color:#cbd5e1}
+code{background:#020617;color:#4ade80;padding:2px 6px;border-radius:4px}
+.final{background:#14532d;border-left:6px solid #22c55e}
+.final h2{color:#86efac}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>KeshavSoft Express API Journey</h1>
+  <p class="subtitle">From Empty Folder → API Actions Generation using KeshavSoft VS Code Extensions</p>
+
+  <!-- STEP 1 -->
+  <div class="step">
+    <h2>STEP 1 — Create Empty Folder</h2>
+    <p>Create an empty folder:</p>
+    <pre>test</pre>
+    <p>Open the folder in VS Code.</p>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step">
+    <h2>STEP 2 — Install Required Extensions</h2>
+    <p>Install these VS Code extensions:</p>
+    <ul>
+      <li><code>ks-express-boilerplate</code></li>
+      <li><code>express api generator</code></li>
+      <li><code>express api sub routes generate</code></li>
+      <li><code>express api endpoints generate</code></li>
+      <li><code>express api actions generate</code></li>
+    </ul>
+    <p style="margin-top:14px">After installing all extensions, restart VS Code once.</p>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step">
+    <h2>STEP 3 — Generate Express Boilerplate</h2>
+    <p>Right click on empty Explorer area.</p>
+    <p>Select:</p>
+    <pre>Express BoilerPlate with simple</pre>
+    <p>This generates:</p>
+    <pre>app.js
+routes.js
+server.js
+Config/
+Public/
+package.json</pre>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step">
+    <h2>STEP 4 — Generate Api Folder</h2>
+    <p>Open: <code>app.js</code></p>
+    <p>Click the button below to view the complete process.</p>
+    <a class="btn" href="step1-generate-api-folder.html">Open Step 1</a>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step">
+    <h2>STEP 5 — Generate V1 Sub Route</h2>
+    <p>Open: <code>Api/routes.js</code></p>
+    <p>Click the button below to view the complete process.</p>
+    <a class="btn" href="step2-generate-v1-subroute.html">Open Step 2</a>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step">
+    <h2>STEP 6 — Generate Table Route</h2>
+    <p>Open: <code>Api/V1/routes.js</code></p>
+    <p>Click the button below to view the complete process.</p>
+    <a class="btn" href="step3-generate-journals-endpoint.html">Open Step 3</a>
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="step">
+    <h2>STEP 7 — Generate API Actions</h2>
+    <p>Open: <code>Api/V1/journals/end-points.js</code></p>
+    <p>Use:</p>
+    <pre>get
+insert
+delete
+alter</pre>
+    <p>This generates API action folders like:</p>
+    <pre>ShowAll/
+Insert/
+Delete/
+Alter/</pre>
+    <p>Along with:</p>
+    <pre>controller.js
+service.js
+errors.js
+middleware.js
+rest.http</pre>
+    <a class="btn" href="step4-generate-api-actions.html">Open Step 4</a>
+  </div>
+
+  <!-- FINAL STRUCTURE -->
+  <div class="step final">
+    <h2>FINAL GENERATED STRUCTURE</h2>
+    <pre>Api/
+└── routes.js
+└── V1/
+    └── routes.js
+    └── journals/
+        ├── Config/
+        ├── end-points.js
+        ├── routes.js
+        ├── ShowAll/
+        │   ├── controller.js
+        │   ├── service.js
+        │   ├── errors.js
+        │   └── rest.http
+        ├── Insert/
+        │   ├── controller.js
+        │   ├── service.js
+        │   ├── errors.js
+        │   ├── middleware.js
+        │   └── rest.http
+        ├── Delete/
+        └── Alter/</pre>
+  </div>
+
+  <!-- PROBLEMS -->
+  <div style="text-align:center;margin-top:10px">
+    <a class="btn" style="background:#ef4444;color:white" href="express-runtime-problems.html">⚠ View Runtime Problems</a>
+  </div>
+
+</div>
+</body>
+</html>
